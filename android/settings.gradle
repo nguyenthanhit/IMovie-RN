@@ -1,0 +1,3 @@
+rootProject.name = 'imovie'
+
+include ':app'

@@ -7,6 +7,23 @@ Time spent: **100** hours spent in total
 
 - Directory Structure follow: [Organizing a React Native Project](https://medium.com/the-react-native-log/organizing-a-react-native-project-9514dfadaa0)
 
+## Focusing:
+* Style
+    * [ ] How to style component?
+* Inheritance
+    * [ ] How to reuse component that have same function?
+* Navigator
+    * [ ] How to change screen? How to sharing data between screen?
+* Local Notification
+    * [ ] How to remind user localy?
+* Redux
+    * [ ] How to use Redux to improve state management in project?
+
+## Step
+1. [ ] Init project, find the approriate project structure, how to organize directories?
+2. [ ] Research Redux, apply to Project.
+3. [ ] Reseach Navigator, find the approriate lib/ways for navigation.
+4. [ ] Start building UI, seperated Logic from UI and implement fuction into project.
 
 ## User Stories
 

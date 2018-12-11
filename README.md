@@ -5,6 +5,9 @@
 
 Time spent: **100** hours spent in total
 
+- Directory Structure follow: [Organizing a React Native Project](https://medium.com/the-react-native-log/organizing-a-react-native-project-9514dfadaa0)
+
+
 ## User Stories
 
 The following **required** functionality is completed:

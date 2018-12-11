@@ -23,7 +23,7 @@ Time spent: **100** hours spent in total
 1. [ ] Init project, find the approriate project structure, how to organize directories?
 2. [ ] Research Redux, apply to Project.
 3. [ ] Reseach Navigator, find the approriate lib/ways for navigation.
-4. [ ] Start building UI, seperated Logic from UI and implement fuction into project.
+4. [ ] Start building UI, seperated Logic from UI and implement function into project.
 
 ## User Stories
 

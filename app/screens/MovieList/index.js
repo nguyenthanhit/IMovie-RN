@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Alert, View, Text, StyleSheet, Button } from 'react-native';
-
-export default class Movies extends Component {
+import { createStackNavigator, createAppContainer } from "react-navigation";
+export class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,24 +10,49 @@ export default class Movies extends Component {
 
   render() {
     return (
-      <View style={style.container}>
+      <View style={styles.container}>
         <Text> Movies List </Text>
-        <Button title="SpiderMan" onPress={this._goToDetail("SpiderMan")}/>
-        <Button title="SpiderPid" onPress={this._goToDetail("SpiderPid")}/>
+        <Button  
+        style={styles.button}
+        title="SpiderMan"
+        color='red'
+        backgroundColor='blue'
+        onPress={this._goToDetail}/>
+        <Button 
+        style={styles.button}
+        title="SpiderPid" 
+        onPress={this._goToDetail}
+        color= "blue"
+        borderColor='black'
+        backgroundColor='red' />
       </View>
     );
   };
 
-  _goToDetail( movieName : String){
-    Alert.alert("You tapped the button " + movieName)
+  _goToDetail() {
+    Alert.alert("You tapped the button ")
   }
-}
-
-const style = StyleSheet.create({
+} 
+const styles = StyleSheet.create({
   container : {
     flex: 1,
-    marginTop: 30,
-    // justifyContent: 'center',
-    // alignItems: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button : {
+    color: "#841584",
+    margin: 50,
+    backgroundColor: "blue",
+    borderColor: 'black',
   }
 })
+const AppNavigator = createStackNavigator(
+  {
+    Movies: MovieList
+  },
+  {
+    initialRouteName: "Home"
+  }
+);
+
+export default createAppContainer(AppNavigator);

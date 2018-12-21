@@ -3,6 +3,10 @@ import {Platform, StyleSheet, Text, View} from 'react-native';
 
 
 export default class MovieDetail extends Component {
+    static navigationOptions = {
+        title: 'Details',
+      }
+
     render() {
         return (
             <View style={styles.container}>

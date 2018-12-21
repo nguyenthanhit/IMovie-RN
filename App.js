@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Alert, View, Text, StyleSheet, Button } from 'react-native';
 import { createStackNavigator, createAppContainer} from "react-navigation";
 import { MovieList } from './app/screens/MovieList';
+import { MovieDetail } from './app/screens/MovieDetail';
 
-export class HomePage extends React.Component {
+export class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,8 +16,9 @@ export class HomePage extends React.Component {
     return (
       <View style={styles.container}>
         <Text> IMovie </Text>
-        <Button title="Welcome to IMovie" onPress={() => {
-          navigate('Movies', {name: 'SpiderMan'})
+        <Button title="Welcome to IMovie" 
+        onPress={() => {
+          navigate('Movies', {})
         }}/>
       </View>
     );
@@ -39,7 +41,8 @@ const styles = StyleSheet.create({
 const AppNavigator = createStackNavigator(
   {
     Home: HomePage,
-    Movies: MovieList
+    Movies: MovieList,
+    Detail: MovieDetail 
   },
   {
     initialRouteName: "Home"

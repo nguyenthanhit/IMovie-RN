@@ -1,8 +1,18 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import { createStackNavigator, createAppContainer} from "react-navigation";
+import { MovieList } from '../MovieList';
+import createNavigator from '@react-navigation/core/dist/navigators/createNavigator';
 
 
-export default class MovieDetail extends Component {
+export class MovieDetail extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+
+        }
+    }
+    
     render() {
         return (
             <View style={styles.container}>

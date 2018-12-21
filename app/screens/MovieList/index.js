@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Alert, View, Text, StyleSheet, Button, Image, FlatList, ActivityIndicator } from 'react-native';
+import { View, StyleSheet, Button, FlatList, ActivityIndicator } from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation'
 import {URL} from '../../constants/Constants'
 import MovieItemList from '../../components/MovieItemList'
+import {MovieList} from '../MovieList'
+import {MovieDetail} from '../MovieDetail'
 
  class Movies extends Component {
 
@@ -32,14 +34,13 @@ import MovieItemList from '../../components/MovieItemList'
         <FlatList
           data ={this.state.dataList}
           renderItem ={({item, index}) => 
-           <MovieItemList item = {item} index = {index} />
+           <MovieItemList 
+           item = {item} 
+           index = {index} 
+           onPress={this._goToDetail.bind(this)}/>
           }
           keyExtractor={({id}, index) => id}
         />  
-
-        <Button title="Go to detail" onPress={() => {
-            this.props.navigation.navigate('DetailScreen')
-        }}/>
       </View>
     )
 };
@@ -58,10 +59,9 @@ import MovieItemList from '../../components/MovieItemList'
     }
   }
 
-  _goToDetail(itemName) {
-      console.log(itemName)
+  _goToDetail() {
       const {navigate} = this.props.navigation;
-       navigate('Detail')
+      navigate('Detail')
   }
 } 
 const styles = StyleSheet.create({
@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
 
 const AppNavigator = createStackNavigator(
   {
-    Home: HomePage,
     Movies: MovieList,
     Detail: MovieDetail 
   },

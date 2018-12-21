@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
-import { createStackNavigator, createAppContainer} from "react-navigation";
-import { MovieList } from '../MovieList';
-import createNavigator from '@react-navigation/core/dist/navigators/createNavigator';
 
 
 export class MovieDetail extends Component {

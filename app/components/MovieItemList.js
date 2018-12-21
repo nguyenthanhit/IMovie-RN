@@ -1,7 +1,10 @@
 import React, { PureComponent } from 'react';
-import {View, Image, Text, Button, StyleSheet} from 'react-native'
+import {View, Image, Text, Button, StyleSheet, TouchableOpacity} from 'react-native'
 
-export default class MovieItemList extends PureComponent {
+export default class MovieItem extends PureComponent {
+    _onPress = () => {
+        this.props.onPressItem(this.props.id);
+      };
 
     constructor(props) {
         super(props)
@@ -10,19 +13,21 @@ export default class MovieItemList extends PureComponent {
     render() {
 
         return(
-            <View style = {[
-                style.container, 
-                {
-                backgroundColor: this.props.index % 2 == 0 ? '#f73378' : 'gray'
-                }
-                ]
-                }>
+            <TouchableOpacity onPress={this.onPress} >
+                <View style = {[
+                    style.container, 
+                    {
+                    backgroundColor: this.props.index % 2 == 0 ? '#f73378' : 'gray'
+                    }
+                    ]
+                    }>
 
-                <Text style ={ style.title}> {this.props.item.title}</Text>
+                    <Text style ={ style.title}> {this.props.item.title}</Text>
 
-                <Text style= {style.content}>{this.props.item.overview}</Text>
+                    <Text style= {style.content}>{this.props.item.overview}</Text>
 
-            </View>
+                </View>
+            </TouchableOpacity>
         )
     }
 }

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Button, FlatList, ActivityIndicator } from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation'
 import {URL} from '../../constants/Constants'
-import MovieItemList from '../../components/MovieItemList'
-import {MovieList} from '../MovieList'
+import MovieItem from '../../components/MovieItemList'
 import {MovieDetail} from '../MovieDetail'
 
  class Movies extends Component {
@@ -30,11 +29,11 @@ import {MovieDetail} from '../MovieDetail'
     }
 
     return (
-      <View style={style.container}>
+      <View style={styles.container}>
         <FlatList
           data ={this.state.dataList}
           renderItem ={({item, index}) => 
-           <MovieItemList 
+           <MovieItem 
            item = {item} 
            index = {index} 
            onPress={this._goToDetail.bind(this)}/>
@@ -80,11 +79,11 @@ const styles = StyleSheet.create({
 
 const AppNavigator = createStackNavigator(
   {
-    Movies: MovieList,
+    Movies: Movies,
     Detail: MovieDetail 
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: "Movies"
   }
 );
 

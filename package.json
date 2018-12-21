@@ -9,13 +9,8 @@
   "dependencies": {
     "react": "16.6.1",
     "react-native": "0.57.7",
-<<<<<<< HEAD
-    "react-native-gesture-handler": "^1.0.10",
-    "react-navigation": "^3.0.8"
-=======
     "react-native-gesture-handler": "^1.0.12",
     "react-navigation": "^3.0.9"
->>>>>>> 8f0d9fb593315b1b2e32a0f39f30f2aa4124ccc2
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

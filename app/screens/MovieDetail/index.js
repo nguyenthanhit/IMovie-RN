@@ -13,6 +13,10 @@ export class MovieDetail extends Component {
         }
     }
     
+    static navigationOptions = {
+        title: 'Details',
+      }
+
     render() {
         return (
             <View style={styles.container}>

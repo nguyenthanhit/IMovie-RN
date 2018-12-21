@@ -1,7 +1,7 @@
 /** @format */
 
 import {AppRegistry} from 'react-native';
-import Home from './App';
+import MainApplication from './app/screens/MovieList/index';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Home);
+AppRegistry.registerComponent(appName, () => MainApplication);

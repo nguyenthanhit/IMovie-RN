@@ -15,19 +15,15 @@ export class HomePage extends React.Component {
     return (
       <View style={styles.container}>
         <Text> IMovie </Text>
-        <Button title="Go To List" onPress={() => {
+        <Button title="Welcome to IMovie" onPress={() => {
           navigate('Movies', {name: 'SpiderMan'})
         }}/>
       </View>
     );
   };
-
-  _goToDetail() {
-    Alert.alert("You tapped the button ")
-  }
 } 
 const styles = StyleSheet.create({
-  container : {
+  container : { 
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

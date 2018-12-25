@@ -3,7 +3,7 @@ import { Alert, View, Text, StyleSheet, Button, Image, FlatList, ActivityIndicat
 import {createStackNavigator, createAppContainer} from 'react-navigation'
 import MovieDetail from '../MovieDetail/index'
 import {URL} from '../../constants/Constants'
-import MovieItemList from '../../components/MovieItemList' 
+import MovieItemComponent from '../../components/MovieItemComponent' 
 
  class Movies extends Component {
 
@@ -16,6 +16,7 @@ import MovieItemList from '../../components/MovieItemList'
 
   static navigationOptions = {
     title: 'Home',
+    
   }
 
   render() {
@@ -29,11 +30,11 @@ import MovieItemList from '../../components/MovieItemList'
     }
 
     return (
-      <View style={style.container}>
+      <View>
         <FlatList
           data ={this.state.dataList}
           renderItem ={({item, index}) => 
-           <MovieItemList item = {item} index = {index} />
+           <MovieItemComponent item = {item}  index = {index} {...this.props}/>
           }
           keyExtractor={({id}, index) => id}
         />  

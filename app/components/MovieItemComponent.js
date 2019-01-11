@@ -13,6 +13,7 @@ import { green_4c, gray_37, pink_c2 } from "../constants/Color";
 export default class MovieItemComponent extends PureComponent {
   constructor(props) {
     super(props);
+    
   }
 
   render() {

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import styles from './styles';
 
 
 export default class MovieDetail extends Component {
@@ -9,7 +10,7 @@ export default class MovieDetail extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
+            <View style={styles}>
                 <Text>MovieDetail</Text>
                 <Text>MovieDetail</Text>
             </View>
@@ -18,11 +19,4 @@ export default class MovieDetail extends Component {
 }
 
 
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-      backgroundColor: '#F5FCFF',
-    }
-});
+

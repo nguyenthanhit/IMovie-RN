@@ -30,21 +30,21 @@ export default class MovieItemComponent extends PureComponent {
           _openDetailScreen();
         }}
       >
-        <View style={{ flex: 1, flexDirection: "column" }}>
+        <View style={{ flex: 1, flexDirection: "row" , marginTop: 8}}>
           <View
-            style={[
-              style.container,
-              {
-                backgroundColor: this.props.index % 2 == 0 ? pink_c2 : green_4c
-              }
-            ]}
+            style={
+              style.container
+            }
           >
             <Image
               source={{ uri: imagePath }}
-              style={{ width: 100, height: 100, margin: 5 }}
+              style={{ resizeMode: 'stretch', height: 150, flex: 1, alignContent: 'center', justifyContent: 'center' }}
             />
 
-            <View style={{ flex: 1, flexDirection: "column" }}>
+        
+          </View>
+
+          <View style={{flex: 2, flexDirection: "column" , marginTop: 16, backgroundColor: this.props.index % 2 == 0 ? pink_c2 : green_4c}}>
               <Text style={style.title}> {this.props.item.title}</Text>
 
               <Text numberOfLines={2} style={style.content}>
@@ -58,9 +58,7 @@ export default class MovieItemComponent extends PureComponent {
                 onPress={() => _openDetailScreen()}
               />
             </View>
-          </View>
-
-          <View style={style.divider} />
+          {/* <View style={style.divider} /> */}
         </View>
       </TouchableWithoutFeedback>
     );
@@ -70,15 +68,15 @@ export default class MovieItemComponent extends PureComponent {
 const style = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
+    flexDirection: 'column',
     marginLeft: 16,
-    marginRight: 16
+    zIndex: 1
   },
 
   title: {
     color: "white",
     fontWeight: "bold",
-    marginLeft: 10,
+    marginLeft: 8,
     fontSize: 16  
   },
 

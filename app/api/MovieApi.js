@@ -1,4 +1,4 @@
-import {URL, IMAGE_URL} from '../constants/Constants';
+import {URL} from '../constants/Constants';
 import axios from 'axios';
  
 axios.defaults.baseURL = URL

@@ -12,6 +12,11 @@ import MovieItemComponent from "../../components/MovieItemComponent";
 import styles from './styles';
 
 export default class MoviesScreen extends Component {
+
+  static navigationOptions = {
+    title: 'Home',
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -19,10 +24,6 @@ export default class MoviesScreen extends Component {
       isRefreshing: false
     }
   }
-
-  static navigationOptions = {
-    title: "Home"
-  };
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.dataList) {
@@ -35,8 +36,6 @@ export default class MoviesScreen extends Component {
 }
 
   render() {  
-
-    console.log("Refresh = ", this.state.isRefreshing)
     if (this.state.isLoading) {
       return (
         <View
@@ -48,7 +47,7 @@ export default class MoviesScreen extends Component {
     }
 
     return (
-      <View>
+      <View style ={{backgroundColor: '#F5F5F5'}}>
         <FlatList
           data={this.props.dataList}
           renderItem={({ item, index }) => (
@@ -63,7 +62,7 @@ export default class MoviesScreen extends Component {
           refreshing={this.state.isRefreshing}
           onRefresh={this.onRefresh}
           onEndReached={() => {
-            this.loadMoreData();
+           
           }}
         />
 

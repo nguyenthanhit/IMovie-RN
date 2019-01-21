@@ -4,7 +4,7 @@ import * as Types  from '../constants/actionType';
 const initialState = {
     isLoading: true,
     isRefreshing: false,
-    data: ''
+    data: []
 }
 
 export default getMovie = (state = initialState, action) => {
@@ -22,7 +22,8 @@ export default getMovie = (state = initialState, action) => {
     return { ...state, isLoading: false, data: action.data}
 
   case Types.FETCH_FAIL:
-  return { ...state}
+  console.log("FAIL =", action.error)
+  return { ...state, error:  action.error}
 
   default:
     return state

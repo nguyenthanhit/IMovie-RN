@@ -10,10 +10,20 @@ class MovieContainer extends Component {
       this.props.actions.fetchData()
   }
 
+  _openDetailScreen = () => {
+    const { navigate } = this.props.navigation;
+    navigate("DetailScreen");
+  }
+  
+
   render() {
     return (
-        <MoviesScreen {...this.props}/>
+        <MoviesScreen ref = "Child" {...this.props} openDetailScreen = {() => {
+            console.log("DetailScreen")
+        }}/>
     );
+
+    console.log(ref)
   }
 }
 

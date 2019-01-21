@@ -18,17 +18,15 @@ export default class MovieItemComponent extends PureComponent {
 
   render() {
     let imagePath = IMAGE_URL + this.props.item.poster_path;
-
-    _openDetailScreen = () => {
-      const { navigate } = this.props.navigation;
-      navigate("DetailScreen");
-    }
-
+    const {openDetailScreen} = this.props
+    console.log(openDetailScreen)
+    
     return (
       <TouchableWithoutFeedback
         onPress={() => {
-          _openDetailScreen();
-        }}
+          console.log("Thanh click")
+          this.props.openDetailScreen
+        }}  
       >
         <View style={{ flex: 1, flexDirection: "row" , marginTop: 8}}>
           <View
@@ -51,14 +49,15 @@ export default class MovieItemComponent extends PureComponent {
                 {this.props.item.overview}
               </Text>
 
-              <Button
+             <View style ={style.btnDetail}>
+             <Button
                 title="Detail"
                 style={style.btnDetail}
                 color="orange"
-                onPress={() => _openDetailScreen()}
+                onPress={() => this.props.openDetailScreen}
               />
+             </View>
             </View>
-          {/* <View style={style.divider} /> */}
         </View>
       </TouchableWithoutFeedback>
     );
@@ -92,6 +91,9 @@ const style = StyleSheet.create({
   },
 
   btnDetail: {
-    marginLeft: 10
+    flex: 1,
+
+    marginLeft: 10,
+    justifyContent: 'flex-end',
   }
 });

@@ -21,7 +21,9 @@ export const getMovieFail = (error) => {
 export const fetchData = () => {
     return (dispatch) => {
         dispatch(startFetching())
+        
         getNowPlaying(1).then(response => {
+            console.log("Success = ", response)
             dispatch(getMovieSuccess(response.data.results))
         }).catch((error) => dispatch(getMovieFail(error)))
     }
